@@ -1,5 +1,5 @@
 from collections import deque
-from MyHeap import *
+from Data_Structers.MyHeap import *
 
 
 class MinHeap(MyHeap):

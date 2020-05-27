@@ -1,4 +1,4 @@
-from Bst import *
+from Data_Structers.Bst import *
 from Algorithms import ArraySortAlgorithms
 import math
 

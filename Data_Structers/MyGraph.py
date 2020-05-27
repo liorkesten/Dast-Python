@@ -1,5 +1,5 @@
-from MyQueue import *
-from my_doubly_linked_list import *
+from Data_Structers.MyQueue import *
+from Data_Structers.my_doubly_linked_list import *
 
 
 class Vertex:
@@ -29,10 +29,10 @@ class MyGraph:
         self.vertices = vertices
 
     def is_bipartite(self):
-        for v in vertices:
+        for v in self.vertices:
             v.side, v.visited = None, False
 
-        for v in vertices:
+        for v in self.vertices:
             if v.visited: continue
             v.visited, v.side, v.parent = True, self.LEFT_SIDE, None
             q = MyQueue()
