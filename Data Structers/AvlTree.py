@@ -1,5 +1,5 @@
 from Bst import *
-from Algorithems import ArraySortAlgorithms
+from Algorithms import ArraySortAlgorithms
 import math
 
 

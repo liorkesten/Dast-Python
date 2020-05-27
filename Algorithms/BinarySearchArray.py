@@ -20,5 +20,4 @@ def findMed(A):
 
 def quickSelect(A, k):
     # TODO implement
-    noam = 0
     pass
