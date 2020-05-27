@@ -6,12 +6,13 @@ ASCII_NUM_FIRST_CHAR = ord("a")
 OPENS = ["{", "(", "["]
 CLOSES = ["}", ")", "]"]
 
+
 def areAnagrams(s, t):
     """
-
-    :param s:
-    :param t:
-    :return:
+    Check if two strings are anagrams to each other
+    :param s: First string
+    :param t: Second string
+    :return: True or False if the strings are anagrams
     """
     if len(s) != len(t):
         return False
