@@ -11,7 +11,7 @@ class Node:
         return str(self.data)
 
 
-class LinkedList:
+class MyLinkedList:
     """
     Regular linked list
     """

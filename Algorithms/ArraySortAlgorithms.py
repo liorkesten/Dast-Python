@@ -9,7 +9,7 @@ Array Sort Algorithms:
 def mergeSort(lst):
     """
     Merge Sort algorithm: gets an array sort it by mergeSort algorithm
-                     Time complexity: nlog(n)
+                     Time complexity: n*log(n)
     :param lst:
     :return:
     """
@@ -67,56 +67,3 @@ def selection_sort(lst, last):
 
     lst[last - 1], lst[max_item_index] = lst[max_item_index], lst[last - 1]
     selection_sort(lst, last - 1)
-
-
-# ________________________________Linear Sorts________________________________
-
-def findMax(A):
-    """
-    Get array and return the max item in the array
-    :param A:
-    :return: maximum value  in the array, -inf if the array is empty.
-    """
-    maximum = float("-inf")
-    for item in A:
-        if maximum < item:
-            maximum = item
-
-    return maximum
-
-
-def binSort(A):
-    """
-    Bin Sort - algorithm: gets an array of int numbers, find the maximum value
-     (m) in the array, than create an list of [0,1,...,m] and than increase
-     the counter of the A array. Put the amount of each index in
-     ret array and return ret
-    :param A: array of int nums
-    :return: new Array that is sorted.
-    """
-    m = findMax(A)
-    if m == float("-inf"):
-        return []
-    # Define bins in len m+1 because m is the max value so bins[0]=0,
-    # bins[m+1]=m
-    bins = [0] * (m + 1)
-    for index in A:
-        bins[index] += 1
-    # Init the return value arr
-    ret = [None] * len(A)
-
-    j = 0  # Index of ret Array
-    for i in range(m + 1):
-        for k in range(bins[i]):
-            ret[j] = i
-            j += 1
-
-    return ret
-
-
-def radixSort(A, d):
-    # TODO implement radixSort
-    pass
-
-
-binSort([1])
