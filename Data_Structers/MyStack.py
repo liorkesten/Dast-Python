@@ -1,4 +1,4 @@
-from doubly_linked_list import *
+from Data_Structers.my_doubly_linked_list import *
 
 
 class MyStack():
