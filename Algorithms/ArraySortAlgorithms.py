@@ -71,11 +71,39 @@ def selection_sort(lst, last):
 
 # ________________________________Linear Sorts________________________________
 
+def findMax(A):
+    maximum = -1
+    for item in A:
+        if maximum < item:
+            maximum = item
+
+    return maximum
+
+
 def binSort(A):
-    # TODO implement binSort using FindMax (implement too)
-    pass
+    m = findMax(A)
+    if m == -1: return []
+    # Define bins in len m+1 because m is the max value so bins[0]=0,
+    # bins[m+1]=m
+    bins = [0] * (m + 1)
+    for index in A:
+        bins[index] += 1
+    # Init the return value arr
+    ret = [None]*len(A)
+
+    j = 0  # Index of ret Array
+    for i in range(m+1):
+        for k in range(bins[i]):
+            ret[j] = i
+            j += 1
+
+    return ret
 
 
 def radixSort(A, d):
     # TODO implement radixSort
     pass
+
+
+a = [3, 5, 8, 3, 1, 8, 3, 2, 9, 11, 34, 22, 35, 12, 31, 8]
+print(binSort(a))
