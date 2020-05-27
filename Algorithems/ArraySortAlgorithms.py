@@ -5,7 +5,7 @@ Array Sort Algorithms:
 """
 
 
-# ___________________________________________________________________________
+# ________________________________Sorts without assumption on A________________
 def mergeSort(lst):
     """
     Merge Sort algorithm: gets an array sort it by mergeSort algorithm
@@ -57,7 +57,7 @@ def selection_sort(lst, last):
     :param last:
     :return:
     """
-    if not last:     # Base Case
+    if not last:  # Base Case
         return
 
     max_item_index = 0
@@ -67,3 +67,15 @@ def selection_sort(lst, last):
 
     lst[last - 1], lst[max_item_index] = lst[max_item_index], lst[last - 1]
     selection_sort(lst, last - 1)
+
+
+# ________________________________Linear Sorts________________________________
+
+def binSort(A):
+    # TODO implement binSort using FindMax (implement too)
+    pass
+
+
+def radixSort(A, d):
+    # TODO implement radixSort
+    pass
