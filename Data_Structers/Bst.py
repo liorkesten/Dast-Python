@@ -101,7 +101,8 @@ class Bst():
         elif steps_x > steps_y:
             for i in range(steps_x - steps_y):
                 cur_y = cur_y.parent
-        # Step 3: Claim with cur_x and cur_y toghter until they meet in the LCA
+        # Step 3: Claim with cur_x and cur_y together until they meet in the
+        # LCA
         while True:
             if cur_x == cur_y:
                 return cur_x  # same as return cur_y
@@ -143,6 +144,12 @@ class Bst():
         return new_node
 
     def find(self, x):
+        """
+        Find in bst
+                        Time Complexity - O(h) : h is the height of the tree
+        :param x: value of some node
+        :return: The node of x if the x (value) is in the tree, else None
+        """
         cur = self.root
         while cur:
             if cur.data == x:
@@ -167,6 +174,11 @@ class Bst():
         return cur
 
     def find_max(self, root=None):
+        """
+        Find the max value in the tree and return it
+        :param root: root of the tree
+        :return: The node with the max value of the tree
+        """
         if not root:
             root = self.root
         cur = root
@@ -179,6 +191,11 @@ class Bst():
         return cur
 
     def successor(self, x):
+        """
+        Return the node of the successor of node x
+        :param x: Node in the bst
+        :return: Node of the successor of x.
+        """
         if not x:
             raise Exception("Must insert valid pointer")
         if x.right_child:
@@ -207,6 +224,11 @@ class Bst():
                     cur = cur.parent
 
     def delete(self, x):
+        """
+        Delete from Tree
+        :param x: x (value) to deleted.
+        :return: None - only delete
+        """
         cur = self.find(x)
         if not cur:
             raise Exception(f"The value {x} is not in the tree")
@@ -225,6 +247,11 @@ class Bst():
             self.n -= 1
 
     def _delete_no_children(self, cur):
+        """
+        Delete case that the node cur has no children
+        :param cur: node to delete
+        :return: None
+        """
         if cur.parent:
             if cur.parent.left_child == cur:
                 cur.parent.left_child = None
@@ -234,6 +261,12 @@ class Bst():
             self.root = None
 
     def _delete_only_one_child(self, cur, child):
+        """
+        Delete case if cur has 1 child
+        :param cur: node to delete
+        :param child: The child of cur
+        :return: None
+        """
         if cur.parent:
             if cur.parent.right_child == cur:
                 cur.parent.right_child, child.parent = child, cur.parent
@@ -245,6 +278,11 @@ class Bst():
             self.root.parent = None
 
     def _delete_two_children(self, cur):
+        """
+        Delete case if cur has 2 children
+        :param cur: node to delete
+        :return: None
+        """
         suc = self.successor(cur)
         cur.data = suc.data
         if suc.is_leaf():
@@ -255,8 +293,8 @@ class Bst():
     def print_bst(self, reverse=False):
         """
         Print BST in order - with out graphic
-        :param reverse:
-        :return:
+        :param reverse: True or False to print in reverse order
+        :return: None - only printing the tree
         """
         if not reverse:
             self._print_bst_in_order(self.root)
@@ -266,7 +304,7 @@ class Bst():
     def _print_bst_in_order(self, root):
         """
         Print BST in recursive in order from the smallest to the biggest
-        :param root:
+        :param root: root of the tree
         """
         if root:
             self._print_bst_in_order(root.left_child)
@@ -277,7 +315,7 @@ class Bst():
         """
         Print BST in recursive in reverse order from the biggest to the
         smallest
-        :param root:
+        :param root: root of the tree
         """
         if root:
             self._print_bst_in_reverse_order(root.right_child)
