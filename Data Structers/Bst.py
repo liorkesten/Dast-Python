@@ -18,6 +18,7 @@ class Node():
 class Bst():
     def __init__(self, array=[]):
         self.root = None
+        self.sd=None
         self.n = 0
 
         self.build_bst(array)
