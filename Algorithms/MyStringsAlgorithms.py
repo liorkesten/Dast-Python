@@ -1,5 +1,5 @@
 from Algorithms.LinearSort import *
-from Data_Structers.MyStack import MyStack
+from Data_Structures.MyStack import MyStack
 
 NUM_OF_CHARS_LOWER_CASE = 26
 ASCII_NUM_FIRST_CHAR = ord("a")

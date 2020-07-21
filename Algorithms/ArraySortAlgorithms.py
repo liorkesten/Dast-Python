@@ -17,9 +17,9 @@ def mergeSort(lst):
     if len(lst) == 1:
         return lst
     mid = len(lst) // 2
-    left = mergeSort(lst[:mid])
-    right = mergeSort(lst[mid:])
-    return _merge(left, right)
+    left = mergeSort(lst[:mid])  # Recursive Left.
+    right = mergeSort(lst[mid:])  # Recursive Right.
+    return _merge(left, right)  # Merge 2 sorted lists
 
 
 def _merge(lstA, lstB):
@@ -34,12 +34,15 @@ def _merge(lstA, lstB):
     while True:
         if i >= len(lstA) and j >= len(lstB):
             break
+        # in case that all elements from a inserted to C
         elif i >= len(lstA):
             lstC.append(lstB[j])
             j += 1
+        # In case that all elements from B inserted to C or B[j]>A[i]
         elif j >= len(lstB) or lstA[i] <= lstB[j]:
             lstC.append(lstA[i])
             i += 1
+        # In case that A[i]>B[j]
         else:
             lstC.append(lstB[j])
             j += 1
@@ -61,9 +64,12 @@ def selection_sort(lst, last):
         return
 
     max_item_index = 0
+    # Find the max item in the list and keep it index.
     for i, item in enumerate(lst[:last]):
         if item > lst[max_item_index]:
             max_item_index = i
 
+    # Swtich the maximum with the last element
     lst[last - 1], lst[max_item_index] = lst[max_item_index], lst[last - 1]
+    # Recursive call
     selection_sort(lst, last - 1)
