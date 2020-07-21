@@ -2,6 +2,7 @@ class Node:
     """
     Class Node; simple node that has the basic fields.
     """
+
     def __init__(self, data=None, next=None, prev=None):
         self.data = data
         self.next = next
@@ -15,6 +16,7 @@ class MyLinkedList:
     """
     Regular linked list
     """
+
     def __init__(self, head=None, tail=None):
         self.head = head
         self.tail = tail

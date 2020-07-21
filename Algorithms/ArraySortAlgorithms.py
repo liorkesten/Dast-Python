@@ -3,6 +3,7 @@ Array Sort Algorithms:
 1. Merge Sort
 2. Selection Sort
 """
+from Data_Structures.MinHeap import *
 
 
 # ________________________________Sorts without assumption on A________________
@@ -50,6 +51,24 @@ def _merge(lstA, lstB):
 
 
 # ___________________________________________________________________________
+
+def heap_sort(lst):
+    """
+    Sort by creating Min Heap and than extract all n items from the lst.
+                    Time Complexity -  O(nlog(n))
+
+    :param lst:
+    :return: Sorted list
+    """
+    new_heap = MinHeap(lst)
+    # Create new list - at first None values.
+    sorted_lst = [None] * len(lst)
+
+    # Extract all items in ascending order to a list.
+    for i in range(len(sorted_lst)):
+        sorted_lst[i] = new_heap.extract_min()
+
+    return sorted_lst
 
 
 def selection_sort(lst, last):

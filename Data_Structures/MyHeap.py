@@ -19,12 +19,14 @@ class MyHeap():
     LEFT_CHILD = "0"
 
     def __init__(self, array=[]):
+        # Attributes
         self.root = None
         self.nth_binary_representing = ""
         self.n = 0
-        self.build_random_heap(array)
-        self.nth_binary_representing = format(len(array), "b")
         self.n = len(array)
+        self.nth_binary_representing = format(len(array), "b")
+        # Build Random heap from array:
+        self.build_random_heap(array)
 
     # _________________________Build Heap______________________________________
     def build_random_heap(self, array):
@@ -105,10 +107,12 @@ class MyHeap():
             raise Exception("Can't delete empty heap")
         # The last should be the right child.
 
-        if nth_leaf.parent.right_child:
-            nth_leaf.parent.right_child = None
-        else:
-            nth_leaf.parent.left_child = None
+        # if the n_th node is not the root :
+        if nth_leaf is not self.root:
+            if nth_leaf.parent.right_child:
+                nth_leaf.parent.right_child = None
+            else:
+                nth_leaf.parent.left_child = None
 
         # update the nth
         self.n -= 1

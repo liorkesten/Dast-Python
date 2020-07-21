@@ -3,7 +3,7 @@ from Data_Structures.my_doubly_linked_list import *
 
 def binaryRep(n):
     """
-    Function that gets an int number and return a linked list the represnt the
+    Function that gets an int number and return a linked list the represent the
     number
     :param n:
     :return:

@@ -13,7 +13,7 @@ class MinHeap(MyHeap):
 
     def __init__(self, array=[]):
         MyHeap.__init__(self, array)
-        self.build_heap(array)
+        # self.build_heap(array)
 
     # _________________________Build Heap______________________________________
     def build_heap(self, array):
