@@ -5,6 +5,7 @@ class UnionFind(set):
     """
     Class UnionFind.
     """
+
     def __init__(self, lst):
         super().__init__()
         self.__values_to_nodes = dict()
@@ -21,8 +22,9 @@ class UnionFind(set):
 
     def make_set(self, key):
         """
-        Create new set- create new linked list and
-        :param key:
+        Create new set- create new linked list.
+                        Time complexity O(1)
+        :param key: new key to the DS.
         :return:
         """
         new_linked_list = MyLinkedList()
@@ -36,6 +38,7 @@ class UnionFind(set):
     def union(self, x, y):
         """
         Union 2 sets
+            Time Complexity - O(min{len(linked_list(x)),len(linked_list(y))})
         :param x:
         :param y:
         :return:
@@ -51,23 +54,24 @@ class UnionFind(set):
             self.union_helper(l2, l1)
 
     def union_helper(self, longer, shorter):
-        # Union lists
-        longer.tail.next, shorter.head.prev = shorter.head, longer.tail
-        # Update representative item:
+        # Step 1: Update representative item:
         cur = shorter.head
         for i in range(shorter.len):
             cur.representative = longer
             cur = cur.next
-        # Update tail and counter
+        # Step 2: Union lists
+        longer.tail.next, shorter.head.prev = shorter.head, longer.tail
+        # Step 3: Update tail and counter
         longer.tail = shorter.tail
         longer.len += shorter.len
 
-        # remove shorter from set.
+        # Step 4: remove shorter from set.
         self.remove(shorter)
 
     def find(self, x):
         """
         Find the representative item of x.
+                    Time Complexity - O(1)
         :param x: node
         :return:
         """
