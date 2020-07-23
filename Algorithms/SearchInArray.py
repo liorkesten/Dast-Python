@@ -1,3 +1,6 @@
+from Algorithms.ArraySortAlgorithms import rand_partition
+
+
 def find(A, x):
     """
     Function that gets a List and item x and return True or False if the item
@@ -50,9 +53,26 @@ def findMed(A):
     return sorted_A[len(A) // 2]
 
 
-def quickSelect(A, k):
-    # TODO implement
-    pass
+def quick_select(A, k, s=0, e=-1):
+    """
+    Find the k^th element in A. using partition.
+    :param A: Array of numbers.
+    :param k: The k^th element
+    :param s: Start index
+    :param e: End index
+    :return:
+    """
+    if e == -1:
+        e = len(A) - 1
+
+    p = rand_partition(A, s, e, e)
+
+    if p == k - 1:  # p is the pivot.
+        return A[p]
+    elif p > k - 1:  # the k^th element is smaller than the pivot
+        return quick_select(A, k, s, p - 1)
+    else:  # the k^th element is greater than the pivot
+        return quick_select(A, k, p + 1, e)
 
 
 def findMax(A):

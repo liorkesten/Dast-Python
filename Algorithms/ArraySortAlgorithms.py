@@ -4,6 +4,7 @@ Array Sort Algorithms:
 2. Selection Sort
 """
 from Data_Structures.MinHeap import *
+from random import randint
 
 
 # ________________________________Sorts without assumption on A________________
@@ -50,7 +51,7 @@ def _merge(lstA, lstB):
     return lstC
 
 
-# ___________________________________________________________________________
+# _______________________________Determinist sorting__________________________
 
 def heap_sort(lst):
     """
@@ -64,7 +65,6 @@ def heap_sort(lst):
     # Extract all items in ascending order to a list.
     for i in range(len(lst)):
         lst[i] = new_heap.extract_min()
-
 
 
 def selection_sort(lst, last):
@@ -88,3 +88,69 @@ def selection_sort(lst, last):
     lst[last - 1], lst[max_item_index] = lst[max_item_index], lst[last - 1]
     # Recursive call
     selection_sort(lst, last - 1)
+
+
+def insertion_sort(a):
+    # TODO
+    pass
+
+
+# _____________________________Random sorting_________________________________
+def quick_sort(a, s=0, e=-1):
+    """
+    Quick Sort - Random pivot.
+                Time complexity  - n*log(n) in the avg case.
+                                    n^2 in the worst case.
+    :param a: array
+    :param s: start index
+    :param e: end index
+    :return: None - change the origin array.
+    """
+    # change e to the len of a.
+    if e == -1:
+        e = len(a) - 1
+
+    if s >= e:
+        return
+
+    p = rand_partition(a, s, e)
+    # Recursive calls
+    quick_sort(a, p + 1, e)  # Recursive right
+    quick_sort(a, s, p - 1)  # Recursive left
+
+
+def rand_partition(a, s, e, piv_index=-1):
+    """
+    Rand partition - generate a random pivot and partition the array.
+    :param a: array
+    :param s: start index
+    :param e: end index
+    :param piv_index: (at a[e] is the pivot.
+    :return: The index of the pivot
+    """
+    # Generate pivot.
+    pivot_index = randint(s, e)
+    a[e], a[pivot_index] = a[pivot_index], a[e]  # Swap.
+    return partition(a, s, e, piv_index)
+
+
+def partition(a, s, e, piv_index=-1):
+    """
+    Partition - the pivot is the last item in the array.
+    set all smaller items from left to the pivot and all greater right to pivot
+    return the index of pivot.
+    :param a: array
+    :param s: start index
+    :param e: end index
+    :param piv_index: (at a[e] is the pivot.
+    :return: The index of the pivot
+    """
+    pivot = a[piv_index]
+    i = s
+    for j in range(s, e):
+        if a[j] <= pivot:
+            a[i], a[j] = a[j], a[i]
+            i += 1
+
+    a[i], a[e] = a[e], a[i]
+    return i  # Return pivot index

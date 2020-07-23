@@ -252,11 +252,13 @@ class Bst():
         :param cur: node to delete
         :return: None
         """
+        # Delete the pointer of the parent to cur.
         if cur.parent:
             if cur.parent.left_child == cur:
                 cur.parent.left_child = None
             else:
                 cur.parent.right_child = None
+        # In case that cur is the root of the BST.
         else:
             self.root = None
 
@@ -268,6 +270,8 @@ class Bst():
         :return: None
         """
         if cur.parent:
+            # Switch Pointers of cur child and cur parent
+            # A-> B-> C       A -> C
             if cur.parent.right_child == cur:
                 cur.parent.right_child, child.parent = child, cur.parent
             else:
@@ -279,12 +283,16 @@ class Bst():
 
     def _delete_two_children(self, cur):
         """
-        Delete case if cur has 2 children
+        Delete case if cur has 2 children - Switch the values of cur and
+        cur.successor.
+        Cur successor can have only 1 child or zero.
         :param cur: node to delete
         :return: None
         """
         suc = self.successor(cur)
         cur.data = suc.data
+        # if cur has 2 children, than its successor can have only 1 child
+        # (or zero).
         if suc.is_leaf():
             self._delete_no_children(suc)
         else:

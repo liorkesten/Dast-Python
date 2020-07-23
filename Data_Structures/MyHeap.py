@@ -31,12 +31,13 @@ class MyHeap():
     # _________________________Build Heap______________________________________
     def build_random_heap(self, array):
         """
-        Function that creates a random heap - by indexes of array:
+        Function that creates a random heap.
         array[i] -> left_child = array[2i], right_child = [2*i+1]
         :param array:
         :return: The root of the heap (Node obj)
         """
         nodes_list = [Node(i) for i in array]
+        # the first element is None - like in regular heap.
         nodes_list.insert(0, None)
 
         for i in range(1, len(nodes_list)):
