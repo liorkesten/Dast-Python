@@ -24,7 +24,7 @@ class UnionFind(set):
         """
         Create new set- create new linked list.
                         Time complexity O(1)
-        :param key: new key to the DS.
+        :param key: new key to the DS.0
         :return:
         """
         new_linked_list = MyLinkedList()

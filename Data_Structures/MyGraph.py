@@ -19,7 +19,7 @@ class MyGraph:
     List of vertices.
     each item in vertices is a vertex that has all his neighbors in a linked
     list
-    **************Build graph???*********************
+    #TODO Build Graph
     """
     DEFAULT_DIST = 0
     LEFT_SIDE = False
@@ -133,3 +133,14 @@ class MyGraph:
                 print(f"{cur}-->", end="")
                 cur = cur.next
             print("")
+
+    def get_set_of_edges(self):
+        set_of_edges = set()
+        for vertex in self.vertices:
+            for neighbor in vertex.neighbors:
+                if (vertex.data, neighbor) in set_of_edges or \
+                        (neighbor, vertex.data) in set_of_edges:
+                    continue
+                else:
+                    set_of_edges.add((vertex.data, neighbor))
+        return set_of_edges
