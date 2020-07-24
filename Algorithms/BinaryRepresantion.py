@@ -12,6 +12,9 @@ def binaryRep(n):
     """
     # Create list of k pows of 2 s.t 2^k>n
     len_span = 0
+    #  Edge case
+    # if len_span == 0:
+    #     len_span = 1
     while 2 ** len_span <= n: len_span += 1
     span = [2 ** i for i in range(len_span)]
 
@@ -34,14 +37,14 @@ def addOne(L):
     :param L: Linked list the represent a num
     :return: None - change the current Linked list
     """
-    cur = L.head
+    cur = L.tail
     while cur:
         if cur.data == 1:
             cur.data = 0
         else:  # Cur.data = 0
             cur.data = 1
             break
-        cur = cur.next
+        cur = cur.prev
     else:
         L.push(1)
 
@@ -52,17 +55,28 @@ def decreaseOne(L):
     :param L: Linked list the represent a num
     :return: None - change the current Linked list
     """
-    cur = L.head
+    cur = L.tail
     while cur:
         if cur.data == 0:
             cur.data = 1
         else:  # Cur.data = 1
             cur.data = 0
             break
-        cur = cur.next
+        cur = cur.prev
     # In case that we have to delete the last pow.
     # For ex decrease 8 - 1,0,0,0  --> 0,1,1,1 --> 1,1,1
-    if L.tail.data == 0:
-        L.tail.prev.next = None
-        L.tail = L.tail.prev
+    if L.head.data == 0:
+        L.head = L.head.next
         L.len -= 1
+
+
+def createRepByAddOne(n):
+    """
+
+    :param n:
+    :return:
+    """
+    l = binaryRep(0)
+    for i in range(n):
+        addOne(l)
+    return l
