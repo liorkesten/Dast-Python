@@ -1,4 +1,4 @@
-from Algorithms.Sort.ArraySortAlgorithms import rand_partition
+from Algorithms.Sort.QuickSort import rand_partition
 
 
 def find(A, x):

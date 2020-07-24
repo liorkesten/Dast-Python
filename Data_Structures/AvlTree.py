@@ -1,5 +1,5 @@
 from Data_Structures.Bst import *
-from Algorithms.Sort import ArraySortAlgorithms
+from Algorithms.Sort import MergeSort
 import math
 
 
@@ -169,7 +169,7 @@ class Avl(Bst):
 # a = [4, 6, 2, 1, 5, 7, 3]
 # a = [15, 5, 3, 12, 10, 6, 7, 13, 16, 20]
 a = [4, 6]
-sorted_a = ArraySortAlgorithms.mergeSort(a)
+sorted_a = MergeSort.mergeSort(a)
 new_bst = Avl(sorted_a, True)
 new_bst.display()
 print("_" * 30)
