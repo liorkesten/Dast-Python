@@ -1,5 +1,5 @@
-from Algorithms.SearchInArray import findMax
-from Algorithms.Sort.LinearSort import *
+from Algorithms.Arrays_Algorithms.FindMax import findMax
+from Algorithms.Sorting_Algorithms.Linear_Sorting.BinSort import *
 
 
 class RangeArray:
@@ -42,5 +42,5 @@ class RangeArray:
         Init the total units list.
         :return:
         """
-        for i in range(1, self.k + 1):
+        for i in range(1, self.__k + 1):
             self.__total_units[i] += self.__total_units[i - 1]

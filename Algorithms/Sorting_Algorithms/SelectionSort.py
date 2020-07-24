@@ -1,6 +1,6 @@
 def selection_sort(lst, last):
     """
-    Selection Sorting Algorithms.
+    Selection Sorting_Algorithms.
                       Complexity Time: O(N^2)
     :param lst:
     :param last:

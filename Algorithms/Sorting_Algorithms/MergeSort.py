@@ -1,7 +1,7 @@
 # ________________________________Sorts without assumption on A________________
 def mergeSort(lst):
     """
-    Merge Sorting Algorithms algorithm: gets an array sort it by mergeSort algorithm
+    Merge Sorting_Algorithms algorithm: gets an array sort it by mergeSort algorithm
                      Time complexity: n*log(n)
     :param lst:
     :return:

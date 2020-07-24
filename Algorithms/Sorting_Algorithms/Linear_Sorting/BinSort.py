@@ -1,6 +1,6 @@
 def binSort(A, m):
     """
-    Bin Sorting Algorithms - algorithm: gets an array of int numbers, find the maximum value
+    Bin Sorting_Algorithms - algorithm: gets an array of int numbers, find the maximum value
      (m) in the array, than create an list of [0,1,...,m] and than increase
      the counter of the A array. Put the amount of each index in
      ret array and return ret

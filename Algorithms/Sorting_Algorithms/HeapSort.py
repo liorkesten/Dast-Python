@@ -3,7 +3,7 @@ from Data_Structures.MinHeap import MinHeap
 
 def heap_sort(lst):
     """
-    Sorting Algorithms by creating Min Heap and than extract all items to to origin list.
+    Sorting_Algorithms by creating Min Heap and than extract all items to to origin list.
                     Time Complexity -  O(nlog(n))
 
     :param lst:

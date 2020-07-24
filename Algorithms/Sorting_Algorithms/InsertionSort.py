@@ -1,7 +1,7 @@
 
 def insertion_sort(lst):
     """
-    Insertion Sorting Algorithms- goes from a[0] to a[-1] and each iteration sort
+    Insertion Sorting_Algorithms- goes from a[0] to a[-1] and each iteration sort
     the sub array.
                     Time complexity - O(n^2)
     :param lst: list

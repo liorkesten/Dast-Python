@@ -6,7 +6,7 @@ from random import randint
 
 def quick_sort(lst, s=0, e=-1):
     """
-    Quick Sorting Algorithms - Random pivot.
+    Quick Sorting_Algorithms - Random pivot.
                 Time complexity  - n*log(n) in the avg case.
                                     n^2 in the worst case.
     :param a: array
