@@ -1,6 +1,4 @@
-from Data_Structures.MyGraph import *
 from Data_Structures.UnionFind import *
-from Algorithms.ArraySortAlgorithms import quick_sort
 
 
 def kruskal(g, w):
@@ -39,3 +37,4 @@ def prim(g, w):
     """
 
     # TODO
+    pass

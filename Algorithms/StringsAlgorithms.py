@@ -1,4 +1,3 @@
-from Algorithms.LinearSort import *
 from Data_Structures.MyStack import MyStack
 
 NUM_OF_CHARS_LOWER_CASE = 26

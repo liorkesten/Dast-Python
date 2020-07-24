@@ -1,5 +1,5 @@
 from Data_Structures.Bst import *
-from Algorithms import ArraySortAlgorithms
+from Algorithms.Sort import ArraySortAlgorithms
 import math
 
 

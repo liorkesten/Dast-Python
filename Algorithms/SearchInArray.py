@@ -1,4 +1,4 @@
-from Algorithms.ArraySortAlgorithms import rand_partition
+from Algorithms.Sort.ArraySortAlgorithms import rand_partition
 
 
 def find(A, x):
@@ -37,20 +37,20 @@ def binary_search_array(lst, x):
         return binary_search_array(lst[:mid], x)
 
 
-def findMed(A):
+def findMed(lst):
     """
     Gets an array and return the med item in the array
-    :param A: Array
-    :return: med item in array A
+    :param lst: Array
+    :return: med item in array lst
     """
     # Prevent circular imports!!!!
-    from Algorithms.LinearSort import binSort
+    from Algorithms.Sort.LinearSort.LinearSort import binSort
 
-    if not A:
+    if not lst:
         return
-    m = findMax(A)
-    sorted_A = binSort(A, m)
-    return sorted_A[len(A) // 2]
+    m = findMax(lst)
+    sorted_a = binSort(lst, m)
+    return sorted_a[len(lst) // 2]
 
 
 def quick_select(A, k, s=0, e=-1):

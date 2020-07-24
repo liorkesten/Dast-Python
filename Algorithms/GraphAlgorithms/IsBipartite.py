@@ -8,11 +8,14 @@ def is_bipartite(g):
     :param g: graph
     :return: True or False if the graph is bipartite
     """
+    # Set default sides and visited.
     for v in g.vertices:
         v.side, v.visited = None, False
-
+    # Iterate in all vertices
     for v in g.vertices:
-        if v.visited: continue
+        if v.visited:
+            continue
+
         v.visited, v.side, v.parent = True, g.LEFT_SIDE, None
         q = MyQueue()
         q.enqueue(v)
@@ -27,6 +30,7 @@ def is_bipartite(g):
                 # If the side is the same:
                 elif cur.data.side == u.side:
                     return False
+                # Set side and parent of cur and cur as visited
                 if not cur.data.visited:
                     cur.data.visited, cur.data.side, cur.data.parent = \
                         True, not u.side, u

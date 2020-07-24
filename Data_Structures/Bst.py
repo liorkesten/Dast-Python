@@ -15,7 +15,7 @@ class Node():
         return str(self.data)
 
 
-class Bst():
+class Bst:
     def __init__(self, array=[]):
         self.root = None
         self.n = 0
@@ -311,7 +311,7 @@ class Bst():
         else:
             self._print_bst_in_reverse_order(self.root)
 
-    def _print_bst_in_order(self, root):
+    def _print_bst_in_order(self, root: Node) -> None:
         """
         Print BST in recursive in order from the smallest to the biggest
         :param root: root of the tree

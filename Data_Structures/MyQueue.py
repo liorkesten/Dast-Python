@@ -32,7 +32,7 @@ class MyQueue():
         :return:
         """
         if self.is_queue_empty():
-            raise Exception("Cant Dequeue when the Queue is empty")
+            raise Exception("Cant Deque when the Queue is empty")
 
         ret = self.head.data
         self.head = self.head.prev
