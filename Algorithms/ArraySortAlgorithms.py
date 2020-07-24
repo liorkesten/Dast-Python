@@ -90,13 +90,24 @@ def selection_sort(lst, last):
     selection_sort(lst, last - 1)
 
 
-def insertion_sort(a):
-    # TODO
-    pass
+def insertion_sort(lst):
+    """
+    Insertion Sort- goes from a[0] to a[-1] and each iteration sort
+    the sub array.
+                    Time complexity - O(n^2)
+    :param lst: list
+    :return:
+    """
+    for i in range(1, len(lst)):
+        j = i
+        # checks if a[j-1]<a[
+        while j > 0 and lst[j - 1] > lst[j]:
+            lst[j], lst[j - 1] = lst[j - 1], lst[j]
+            j -= 1
 
 
 # _____________________________Random sorting_________________________________
-def quick_sort(a, s=0, e=-1):
+def quick_sort(lst, s=0, e=-1):
     """
     Quick Sort - Random pivot.
                 Time complexity  - n*log(n) in the avg case.
@@ -108,18 +119,18 @@ def quick_sort(a, s=0, e=-1):
     """
     # change e to the len of a.
     if e == -1:
-        e = len(a) - 1
+        e = len(lst) - 1
 
     if s >= e:
         return
 
-    p = rand_partition(a, s, e)
+    p = rand_partition(lst, s, e)
     # Recursive calls
-    quick_sort(a, p + 1, e)  # Recursive right
-    quick_sort(a, s, p - 1)  # Recursive left
+    quick_sort(lst, p + 1, e)  # Recursive right
+    quick_sort(lst, s, p - 1)  # Recursive left
 
 
-def rand_partition(a, s, e, piv_index=-1):
+def rand_partition(lst, s, e, piv_index=-1):
     """
     Rand partition - generate a random pivot and partition the array.
     :param a: array
@@ -130,8 +141,8 @@ def rand_partition(a, s, e, piv_index=-1):
     """
     # Generate pivot.
     pivot_index = randint(s, e)
-    a[e], a[pivot_index] = a[pivot_index], a[e]  # Swap.
-    return partition(a, s, e, piv_index)
+    lst[e], lst[pivot_index] = lst[pivot_index], lst[e]  # Swap.
+    return partition(lst, s, e, piv_index)
 
 
 def partition(a, s, e, piv_index=-1):
@@ -154,3 +165,5 @@ def partition(a, s, e, piv_index=-1):
 
     a[i], a[e] = a[e], a[i]
     return i  # Return pivot index
+
+
