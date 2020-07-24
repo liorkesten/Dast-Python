@@ -72,7 +72,8 @@ def decreaseOne(L):
 
 def createRepByAddOne(n):
     """
-
+    Function that create a binary representation by adding one to linked list:
+                        Time complexity: O(n)
     :param n:
     :return:
     """
