@@ -1,6 +1,7 @@
 from collections import deque
 from Data_Structures.MyHeap import *
 
+
 class MaxHeap(MyHeap):
     """
     Max heap object:
@@ -9,6 +10,7 @@ class MaxHeap(MyHeap):
     Insert - O(log(n))
     Delete - O(log(n))
     """
+
     def __init__(self, array=[]):
         MyHeap.__init__(self, array)
         self.build_heap(array)
@@ -122,16 +124,18 @@ class MaxHeap(MyHeap):
     def HeapifyUp(self, x):
         """
         HeapifyUp algorithm -gets a pointer in heap that maybe the value of
-        the node doesnt save the heap property and the algo bubbling the value
-         of x in recursive until the correct node.
-         after this algo the heap property saved.
+        the node doesnt save the heap property and the algorithm bubbling
+         the value of x in recursive until the correct node.
+         After this algorithm the heap property saved.
 
                         time Complexity log(n)
-        :param x:
+        :param x: Node in the heap.
         :return:
         """
         if x and x.parent and x.data > x.parent.data:
+            # Swap only values - not nodes!
             x.parent.data, x.data = x.data, x.parent.data
+            # Recursive call on the parent of x
             self.HeapifyUp(x.parent)
 
     def heap_sort(self):

@@ -298,9 +298,11 @@ class Bst():
         else:
             self._delete_only_one_child(suc, suc.right_child)
 
+    #  ______________________ Print BST _______________________________________
     def print_bst(self, reverse=False):
         """
-        Print BST in order - with out graphic
+        Print BST in order - with out graphic.
+        Recursive version
         :param reverse: True or False to print in reverse order
         :return: None - only printing the tree
         """
@@ -315,9 +317,23 @@ class Bst():
         :param root: root of the tree
         """
         if root:
+            # Left
             self._print_bst_in_order(root.left_child)
+            # Parent
             print(root)
+            # Right
             self._print_bst_in_order(root.right_child)
+
+    def print_bst_with_successor(self):
+        """
+        Print the values in the bst in order - iteration version
+        (not recursive).
+        :return: None - only print the values in the tree in ascending order.
+        """
+        cur = self.find_min(self.root)
+        while cur:
+            print(cur.data)
+            cur = self.successor(cur)
 
     def _print_bst_in_reverse_order(self, root):
         """
@@ -344,11 +360,12 @@ class Bst():
                     next_level.append(n.right_child)
             current_level = next_level
 
-# # a = [4, 6, 2, 1, 5, 7, 3]
+# a = [4, 6, 2, 1, 5, 7, 3]
 # a = [15, 5, 16, 3, 12, 10, 6, 7, 13, 16, 20]
 # new_bst = Bst(a)
+# new_bst.print_bst_with_successor()
 # new_bst.display()
-# # print(new_bst.successor(new_bst.root.left_child.right_child))
+# print(new_bst.successor(new_bst.root.left_child.right_child))
 # # print(new_bst.predecessor(new_bst.root))
 # # new_bst.delete(7)
 # print("_" * 30)

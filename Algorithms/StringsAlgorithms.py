@@ -3,8 +3,11 @@ from Data_Structures.MyStack import MyStack
 
 NUM_OF_CHARS_LOWER_CASE = 26
 ASCII_NUM_FIRST_CHAR = ord("a")
-OPENS = ["{", "(", "["]
-CLOSES = ["}", ")", "]"]
+PARENTHESES = {
+    '{': '}',
+    '(': ')',
+    '[': ']',
+}
 
 
 def areAnagrams(s, t):
@@ -31,17 +34,18 @@ def areAnagrams(s, t):
 def parenthesesChecker(s):
     """
     Gets an string and return True or False if the string is valid parentheses
+                Time complexity : O(n)
     :param s: parentheses string
     :return: True or False if the string is valid parentheses
     """
     # Create new stack
-    newStack = MyStack()
+    new_stack = MyStack()
 
-    for i in range(len(s)):
-        if s[i] in OPENS:
-            newStack.push(s[i])
+    for p in s:
+        if p in PARENTHESES:
+            new_stack.push(p)
         else:
-            if newStack.isStackEmpty() or newStack.pop() != \
-                    OPENS[CLOSES.index(s[i])]:
+            if new_stack.isStackEmpty() or \
+                    PARENTHESES[new_stack.pop()] != p:
                 return False
-    return newStack.isStackEmpty()
+    return new_stack.isStackEmpty()

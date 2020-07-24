@@ -45,7 +45,3 @@ def radixSort(A, d):
         bin = [0] * BASIS_OF_RADIX_SORT
         ret = binSort(ret)
     pass
-
-
-A = [2, 5, 6, 3, 12, 545, 32, 12, 41]
-print(binSort(A, findMax(A)))
