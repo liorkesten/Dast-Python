@@ -14,7 +14,7 @@ def binSort(A, m):
     for index in A:
         bins[index] += 1
     # Init the return value arr
-    ret = [None] * len(A)
+    ret = [0] * len(A)
 
     j = 0  # Index of ret Array
     for i in range(m + 1):

@@ -1,9 +1,11 @@
-from Algorithms.Sorting_Algorithms.Linear_Sorting.BinSort import *
+from Algorithms.Arrays_Algorithms.FindMax import findMax
+from Algorithms.Sorting_Algorithms.Linear_Sorting.BinSort import binSort
 
 
 def findMed(lst):
     """
-    Gets an array and return the med item in the array
+    Gets an array of integers that is bounded by some m - maximum integer
+    The function return the med item in the array.
     :param lst: Array
     :return: med item in array lst
     """
