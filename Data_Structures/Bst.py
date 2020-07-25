@@ -1,3 +1,6 @@
+import math
+
+
 class Node():
     def __init__(self, data=None, parent=None, left_child=None,
                  right_child=None):
@@ -16,19 +19,54 @@ class Node():
 
 
 class Bst:
-    def __init__(self, array=[]):
+    def __init__(self, array=[], is_array_sorted=False):
         self.root = None
         self.n = 0
-
-        self.build_bst(array)
+        if not is_array_sorted:
+            self.build_bst(array)
+        else:
+            self.build_bst_from_sorted_array(array)
 
     # __________________________________ QUERIES _____________________________
 
     def build_bst(self, array):
+        """
+        Build Bst from non sorted array
+                Time complexity: O(nlogn)
+        :param array:
+        :return:
+        """
         if not array:
             return
         for val in array:
             self.insert(val)
+
+    def build_bst_from_sorted_array(self, array, left=0, right=-1):
+        """
+        Build bst from sorted array.
+                    Time complexity : O(n)
+        :param right:
+        :param left:
+        :param array: sorted array
+        :return:
+        """
+        if right == -1:
+            right = len(array) - 1
+
+        if right - left == 0:
+            return None
+        elif right - left == 1:
+            return Node(array[left])
+        else:
+            i = math.ceil(right - left / 2)
+            x = Node(array[i])
+
+            x.left_child = \
+                self.build_bst_from_sorted_array(array, left, i - 1)
+            x.right_child = \
+                self.build_bst_from_sorted_array(array, i + 1, right)
+
+        return x
 
     def insert(self, new_value):
         if self.find(new_value):  # check if the value already exist in the bst
