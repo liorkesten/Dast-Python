@@ -10,12 +10,12 @@ def selection_sort(lst, last):
         return
 
     max_item_index = 0
-    # Find the max item in the list and keep it index.
+    # Find the max item in the list and keep the index.
     for i, item in enumerate(lst[:last]):
         if item > lst[max_item_index]:
             max_item_index = i
 
-    # Swtich the maximum with the last element
+    # swap the maximum with the last element
     lst[last - 1], lst[max_item_index] = lst[max_item_index], lst[last - 1]
     # Recursive call
     selection_sort(lst, last - 1)

@@ -45,6 +45,7 @@ class Bst:
         """
         Build bst from sorted array.
                     Time complexity : O(n)
+                    By master theorem: T(n)= 2T(n/2)+O(1)
         :param right:
         :param left:
         :param array: sorted array

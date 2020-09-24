@@ -9,7 +9,7 @@ def LCA(self, x, y):
     cur = x
     ancestor = x
     pass_ancestor = False
-    while cur is not (y):
+    while cur is not y:
         if cur.right_child:
             cur = self.find_min(cur.right)
         else:

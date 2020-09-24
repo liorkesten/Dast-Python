@@ -13,3 +13,8 @@ def insertion_sort(lst):
         while j > 0 and lst[j - 1] > lst[j]:
             lst[j], lst[j - 1] = lst[j - 1], lst[j]
             j -= 1
+
+
+
+a = [i for i in range(10)]
+insertion_sort(a)
