@@ -8,17 +8,17 @@ Most of the code implemented in Python excpet 3 data structures:
 Also you can find a table (excel file) that contains most of the data structures and algorithms with their specifc API, time complexity and space complexity.
 
 # DS:
-1. Heap, Max Heap, Min Heap
-2. Doubly LinkedList
-3. Queue
-4. Stack
+1. Heap, Max Heap, Min Heap.
+2. Doubly LinkedList.
+3. Queue.
+4. Stack.
 5. Graph.
-6. RB Tree
-7. BST Tree
-8. HashSet
-9. Union-Find
-10. Range Array.
-11. VLVector - vector with static capacity.
+6. RB Tree.
+7. BST Tree.
+8. HashSet.
+9. Union-Find.
+10. Range Array - Get how many entries there are in the range of [a,b].
+11. VLVector - vector with static capacity. changing the memory segmentation to heap if the capacity is greater than the static capacity.
 
 # Algorithms:
 1. String algorithms.
