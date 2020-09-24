@@ -3,6 +3,10 @@ from Algorithms.Sorting_Algorithms.Linear_Sorting.BinSort import *
 
 
 class RangeArray:
+    """
+    Class that it's purpose is the query:
+    Get how many entries there are in the range of [a,b]
+    """
     def __init__(self, lst=None):
         self.__k = findMax(lst)
         self.__units = [0] * (self.__k + 1)
