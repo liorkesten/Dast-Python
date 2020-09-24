@@ -1,7 +1,8 @@
 # Data-Structures-and-Algorithms
 Implementain of Data structures and algorithms.
-Most of the code implemented in Python excpet 2 data structures:
+Most of the code implemented in Python excpet 3 data structures:
 1. C - Red Black Tree.
+2. C++ - VLVector.
 2. Java - Hash Set.
 
 Also you can find a table (excel file) that contains most of the data structures and algorithms with their specifc API, time complexity and space complexity.
@@ -17,6 +18,7 @@ Also you can find a table (excel file) that contains most of the data structures
 8. HashSet
 9. Union-Find
 10. Range Array.
+11. VLVector - vector with static capacity.
 
 # Algorithms:
 1. String algorithms.
