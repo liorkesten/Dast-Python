@@ -15,10 +15,11 @@ Also you can find a table (excel file) that contains most of the data structures
 5. Graph.
 6. RB Tree.
 7. BST Tree.
-8. HashSet.
-9. Union-Find.
-10. Range Array - Get how many entries there are in the range of [a,b].
-11. VLVector - vector with static capacity. changing the memory segmentation to heap if the capacity is greater than the static capacity.
+8. Trie
+9. HashSet.
+10. Union-Find.
+11. Range Array - Get how many entries there are in the range of [a,b].
+12. VLVector - vector with static capacity. changing the memory segmentation to heap if the capacity is greater than the static capacity.
 
 # Algorithms:
 1. String algorithms.
