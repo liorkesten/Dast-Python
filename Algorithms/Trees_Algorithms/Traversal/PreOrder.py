@@ -3,7 +3,7 @@ from Algorithms.Trees_Algorithms.Traversal.NodeForTraversal import Node
 
 def pre_order_tree_recursive(f, node: "Node") -> None:
     """
-    Parent -> Left -> Right
+    node -> Left -> Right
     :param f: Function on each node
     :param node: root of tree
     :return: None
@@ -17,7 +17,6 @@ def pre_order_tree_recursive(f, node: "Node") -> None:
 
 def pre_order_tree_iter(f, root: "Node") -> None:
     """
-    Traversal Without using parent pointer - iterative.
     :param f: Function on each node
     :param root: root of tree
     :return: None

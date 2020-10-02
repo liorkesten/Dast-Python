@@ -16,7 +16,6 @@ def post_order_tree_recursive(f, node: "Node") -> None:
 
 def post_order_tree_iter(f, root: "Node") -> None:
     """
-    Traversal Without using parent pointer - iterative.
     :param f: Function on each node
     :param root: root of tree
     :return: None

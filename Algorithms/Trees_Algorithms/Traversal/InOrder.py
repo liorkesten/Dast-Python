@@ -16,7 +16,6 @@ def in_order_tree_recursive(f, node: "Node") -> None:
 
 def in_order_tree_iter(f, root: "Node") -> None:
     """
-    Traversal Without using parent pointer - iterative.
     :param f: Function on each node
     :param root: root of tree
     :return: None
@@ -29,7 +28,7 @@ def in_order_tree_iter(f, root: "Node") -> None:
             stack.append(cur)
             cur = cur.left
         elif cur:
-            cur = cur.pop()
+            cur = stack.pop()
             f(cur)
             cur = cur.right  # check the right subtree
         else:
